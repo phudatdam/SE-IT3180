@@ -133,41 +133,12 @@ Frontend: pages/Stats/RevenueReportPage.jsx. Hiển thị biểu đồ hoặc b�
 3. Frontend: React (Vite) + Tailwind CSS (Style nhanh) + Ant Design hoặc Material UI (Cho các bảng biểu Data Table đẹp).
 4. State Management: React Context API (Đủ dùng) hoặc Redux Toolkit (Nếu dự án mở rộng lớn).
 
-## 5 Hướng dẫn chạy nhanh
 
-### Backend:
-
-1. Tạo file package.json: npm init -y.
-
-2. Cài thư viện: npm install express mongoose dotenv cors bcryptjs jsonwebtoken.
-
-3. Copy các file code trên vào đúng thư mục.
-
-4. Chạy: node server.js.
-
-### Frontend:
-
-1. Tạo dự án: npm create vite@latest frontend -- --template react.
-
-2. Cài thư viện: npm install axios react-router-dom.
-
-3. Cài Tailwind CSS (theo hướng dẫn chuẩn của Tailwind).
-
-4. Copy code vào src.
-
-5. Chạy: npm run dev.
-
-
-
-
-
-
-
-Hướng dẫn chạy nhanh (Đã cập nhật đường dẫn & Lưu ý)
+## 5 Hướng dẫn chạy nhanh (Cho người tạo file)
 
 Giả sử thư mục dự án của bạn tên là quan-ly-chung-cu và bạn đang mở Terminal tại thư mục này.
 
-Backend:
+### Backend:
 
 Bước 1: Di chuyển vào folder backend:
 cd backend
@@ -190,7 +161,7 @@ Vẫn đứng ở thư mục backend, chạy lệnh: node server.js
 
 Nếu thấy thông báo "Server running..." và "MongoDB Connected..." là thành công.
 
-Frontend (Làm mới hoàn toàn):
+### Frontend (Làm mới hoàn toàn):
 
 Quan trọng: Nếu bạn đã lỡ tạo thủ công thư mục frontend và bị lỗi, hãy XÓA thư mục đó đi trước khi bắt đầu. Đừng tự tạo folder trống.
 
@@ -218,3 +189,64 @@ Copy các file code mẫu (App.jsx, LoginPage.jsx...) vào thư mục frontend/s
 
 Bước 6: Chạy Frontend:
 npm run dev
+
+
+## 6 Hướng dẫn chạy dự án khi Clone từ Git về (Cho người mới)
+
+Đây là quy trình chuẩn khi bạn clone code này về một máy tính khác.
+
+Yêu cầu:
+
+Máy đã cài Node.js.
+
+Máy đã cài MongoDB.
+
+### Bước 1: Clone dự án
+
+```
+git clone https://github.com/deanzedd/SE-IT3180.git
+cd QuanLyChungCu
+```
+
+### Bước 2: Chạy Backend (Quan trọng nhất là file .env)
+
+Vào thư mục backend: 
+```
+cd backend
+```
+
+Cài đặt thư viện: 
+```
+npm install 
+#(Lệnh này sẽ tự tải lại node_modules).
+```
+Tạo file .env: Tạo một file tên là .env trong thư mục backend và dán nội dung sau vào (vì file này không có trên Git):
+```
+PORT=5000
+MONGO_URI=mongodb://localhost:27017/quan_ly_chung_cu
+JWT_SECRET=ma_bao_mat_cua_ban_123456
+JWT_EXPIRE=30d
+```
+
+Chạy server: 
+```
+node server.js
+```
+
+### Bước 3: Chạy Frontend
+
+Mở một terminal mới, từ thư mục gốc vào frontend: 
+```
+cd frontend
+```
+
+Cài đặt thư viện: 
+```
+npm install 
+#(Tự tải React, Tailwind, Vite...).
+```
+
+Chạy web: 
+```
+npm run dev
+```
